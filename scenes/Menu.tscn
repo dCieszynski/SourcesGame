@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/sounds/ambients/menu.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/menu.jpg" type="Texture" id=3]
+[ext_resource path="res://assets/m5x7.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 102
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.41431
+margin_top = 1.41422
+margin_right = 1.41431
+margin_bottom = 1.41418
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="menu" type="Sprite" parent="."]
+position = Vector2( 640.176, 358.748 )
+scale = Vector2( 0.332316, 0.29932 )
+texture = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -151.5
+margin_top = -201.0
+margin_right = 151.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+margin_top = 66.0
+margin_right = 303.0
+margin_bottom = 86.0
+text = "Start Game"
+
+[node name="HowToPlayButton" type="Button" parent="VBoxContainer"]
+margin_top = 90.0
+margin_right = 303.0
+margin_bottom = 110.0
+text = "How to play"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+margin_top = 114.0
+margin_right = 303.0
+margin_bottom = 134.0
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -40.5
+margin_bottom = 40.5
+custom_fonts/font = SubResource( 1 )
+text = "Sources"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowToPlayButton" to="." method="_on_HowToPlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

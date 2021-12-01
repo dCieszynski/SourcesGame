@@ -1,0 +1,186 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/ui_bg.png" type="Texture" id=1]
+[ext_resource path="res://assets/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/Ui.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=10]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 48
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 48
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_left = -0.0015625
+anchor_right = 0.998438
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_top = 0.887
+anchor_right = 1.002
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 0.359985
+margin_right = -0.560059
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelInfo" type="HBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.107
+anchor_top = 0.111
+anchor_right = 0.85
+anchor_bottom = 0.901
+margin_top = -4.991
+margin_right = -765.0
+margin_bottom = -4.981
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level" type="Label" parent="NinePatchRect/LevelInfo"]
+margin_left = 27.0
+margin_top = 13.0
+margin_right = 136.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 10 )
+text = "Level: "
+
+[node name="LevelNumber" type="Label" parent="NinePatchRect/LevelInfo"]
+margin_left = 140.0
+margin_top = 13.0
+margin_right = 158.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 11 )
+text = "1"
+
+[node name="WaveInfo" type="HBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.107
+anchor_top = 0.111
+anchor_right = 0.85
+anchor_bottom = 0.901
+margin_left = 320.0
+margin_top = -4.991
+margin_right = -320.0
+margin_bottom = -4.981
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wave" type="Label" parent="NinePatchRect/WaveInfo"]
+margin_left = 70.0
+margin_top = 13.0
+margin_right = 181.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 12 )
+text = "Wave: "
+
+[node name="WaveXOf" type="Label" parent="NinePatchRect/WaveInfo"]
+margin_left = 185.0
+margin_top = 13.0
+margin_right = 203.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 13 )
+text = "1"
+
+[node name="Wave2" type="Label" parent="NinePatchRect/WaveInfo"]
+margin_left = 207.0
+margin_top = 13.0
+margin_right = 219.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 14 )
+text = "/"
+
+[node name="WaveOfY" type="Label" parent="NinePatchRect/WaveInfo"]
+margin_left = 223.0
+margin_top = 13.0
+margin_right = 241.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 15 )
+text = "3"
+
+[node name="SourceHpInfo" type="HBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.107
+anchor_top = 0.111
+anchor_right = 0.85
+anchor_bottom = 0.901
+margin_left = 704.0
+margin_top = -4.991
+margin_right = 98.0
+margin_bottom = -4.981
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source" type="Label" parent="NinePatchRect/SourceHpInfo"]
+margin_left = 27.0
+margin_top = 13.0
+margin_right = 276.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 7 )
+text = "Source Health: "
+
+[node name="SourceHp" type="Label" parent="NinePatchRect/SourceHpInfo"]
+margin_left = 280.0
+margin_top = 13.0
+margin_right = 317.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 16 )
+text = "10"
+
+[node name="PauseButton" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 9 )
+text = "Pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]

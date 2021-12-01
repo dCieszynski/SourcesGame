@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/orbdest.wav-b91c8cfc69ba0c3c676a02e6e30f9032.sample"
+
+[deps]
+
+source_file="res://assets/sounds/orbdest.wav"
+dest_files=[ "res://.import/orbdest.wav-b91c8cfc69ba0c3c676a02e6e30f9032.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

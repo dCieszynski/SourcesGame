@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/m5x7.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/Tutorial.gd" type="Script" id=10]
+[ext_resource path="res://assets/sounds/ambients/SciFi Music for YouTube videos [ NO COPYRIGHT].wav" type="AudioStream" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 102
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 52
+font_data = ExtResource( 2 )
+
+[node name="EndScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -82.5
+margin_bottom = 82.5
+custom_fonts/font = SubResource( 1 )
+text = "Well done!
+You defended all sources!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 28.807
+margin_top = 595.024
+margin_right = 266.807
+margin_bottom = 643.024
+custom_fonts/font = SubResource( 2 )
+text = "Back to Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

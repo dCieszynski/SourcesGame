@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/[CREATIVE COMMONS MUSIC] DARK AMBIENT HORROR SUSPENSE TENSION CREEPY ALIEN ATMOSPHERE 006.wav-c8999680387eebb61114793faff3d033.sample"
+
+[deps]
+
+source_file="res://assets/sounds/ambients/[CREATIVE COMMONS MUSIC] DARK AMBIENT HORROR SUSPENSE TENSION CREEPY ALIEN ATMOSPHERE 006.wav"
+dest_files=[ "res://.import/[CREATIVE COMMONS MUSIC] DARK AMBIENT HORROR SUSPENSE TENSION CREEPY ALIEN ATMOSPHERE 006.wav-c8999680387eebb61114793faff3d033.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

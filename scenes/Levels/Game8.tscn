@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Game1.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Levels/Level8.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/sounds/ambients/[CREATIVE COMMONS MUSIC] DARK AMBIENT HORROR SUSPENSE TENSION CREEPY ALIEN ATMOSPHERE 006.wav" type="AudioStream" id=4]
+
+[node name="Game8" type="Node"]
+script = ExtResource( 1 )
+next_scene_path = "res://scenes/Levels/Game9.tscn"
+
+[node name="Level" parent="." instance=ExtResource( 3 )]
+level = 8
+enemies = [ 14, 14, 14, 13, 13, 13, 13, 13, 13, 12, 12 ]
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+anchor_top = 0.00110236
+anchor_bottom = 1.0011
+mouse_filter = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+
+[connection signal="get_current_wave" from="Level" to="Control" method="_on_Level_get_current_wave"]
+[connection signal="get_level" from="Level" to="Control" method="_on_Level_get_level"]
+[connection signal="get_source_health" from="Level" to="Control" method="_on_Level_get_source_health"]
+[connection signal="win" from="Level" to="." method="_on_Level_win"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Enemy3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Enemy2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
+
+[node name="Spawner" type="Position2D"]
+script = ExtResource( 1 )
+spawnling_scene1 = ExtResource( 4 )
+spawnling_scene2 = ExtResource( 3 )
+spawnling_scene3 = ExtResource( 2 )
+
+[node name="WaveTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]
